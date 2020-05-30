@@ -1,8 +1,6 @@
 const blogsRouter = require('express').Router()
 // const Blog = require('../models/blog')
 const mongoose = require('mongoose')
-const config = require('../utils/config')
-
 
 const blogSchema = mongoose.Schema({
   title: String,
@@ -12,8 +10,6 @@ const blogSchema = mongoose.Schema({
 })
 
 const Blog = mongoose.model('Blog', blogSchema)
-
-mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 blogsRouter.get('/', (request, response) => {
   Blog

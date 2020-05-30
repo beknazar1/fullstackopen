@@ -16,5 +16,11 @@
   },
   "scripts": {
     "watch": "nodemon index.js"
+  },
+  "nodemonConfig": {
+    "delay": "1500",
+    "events": {
+      "restart": "fuser -k 3001/tcp"
+    }
   }
 }
