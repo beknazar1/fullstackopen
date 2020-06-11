@@ -12,16 +12,21 @@
   },
   "devDependencies": {
     "eslint": "^7.1.0",
+    "jest": "^26.0.1",
     "nodemon": "^2.0.4"
   },
   "scripts": {
     "watch": "nodemon index.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "jest --verbose"
   },
   "nodemonConfig": {
     "delay": "1500",
     "events": {
       "restart": "fuser -k 3001/tcp"
     }
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
